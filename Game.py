@@ -24,6 +24,7 @@ def ball_movement():
             # TODO Task 2: Fix score to increase by 1
             score += 1  # Increase player score
             ball_speed_y *= -1  # Reverse ball's vertical direction
+            hit_sound.play()
             # TODO Task 6: Add sound effects HERE
 
     # Ball collision with top boundary
@@ -36,6 +37,7 @@ def ball_movement():
 
     # Ball goes below the bottom boundary (missed by player)
     if ball.bottom > screen_height:
+        miss_sound.play()
         restart()  # Reset the game
 
 def player_movement():
@@ -63,6 +65,12 @@ def restart():
 pygame.mixer.pre_init(44100, -16, 1, 1024)
 pygame.init()
 clock = pygame.time.Clock()
+
+# Load Sound
+hit_sound = pygame.mixer.Sound('bounce.wav')
+miss_sound = pygame.mixer.Sound('miss.wav')
+hit_sound.set_volume(0.3)
+miss_sound.set_volume(0.3)
 
 # Main Window setup
 screen_width = 500  # Screen width (can be adjusted)
