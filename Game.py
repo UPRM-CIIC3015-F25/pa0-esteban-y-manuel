@@ -70,8 +70,8 @@ clock = pygame.time.Clock()
 # Load Sound
 hit_sound = pygame.mixer.Sound('bounce.wav')
 miss_sound = pygame.mixer.Sound('miss.wav')
-hit_sound.set_volume(0.2)
-miss_sound.set_volume(0.2)
+hit_sound.set_volume(0.3)
+miss_sound.set_volume(0.3)
 
 # Main Window setup
 screen_width = 500  # Screen width (can be adjusted)
